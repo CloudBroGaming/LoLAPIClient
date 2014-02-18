@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C938D50-4B1F-480D-B9FB-BC9F72A2A685}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudBroGaming.LoLAPI</RootNamespace>
+    <AssemblyName>LoLAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="rtmp-sharp">
+      <HintPath>..\rtmp-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientVersion.cs" />
+    <Compile Include="LoLAPIClient.cs" />
+    <Compile Include="LoLClientRegion.cs" />
+    <Compile Include="ILoLCredential.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RiotClasses\com\riotgames\kudos\dto\PendingKudosDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\leagues\pojo\LeagueItemDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\leagues\pojo\LeagueListDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\leagues\pojo\MiniSeriesDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\account\AccountSummary.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\broadcast\BroadcastNotification.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\catalog\champion\ChampionDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\catalog\champion\ChampionSkinDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\catalog\Effect.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\catalog\icon\Icon.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\catalog\ItemEffect.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\catalog\runes\Rune.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\catalog\runes\RuneType.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\clientfacade\domain\LoginDataPacket.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\BannedChampion.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\BotParticipant.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\ChampionBanInfoDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\GameDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\GameObserver.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\GameTypeConfigDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\map\GameMap.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\message\GameNotification.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\ObfuscatedParticipant.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\Participant.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\PlatformGameLifecycleDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\PlayerChampionSelectionDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\PlayerCredentialsDto.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\PlayerParticipant.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\PracticeGameConfig.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\practice\PracticeGameSearchResult.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\game\StartChampSelectDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\harassment\LcdsResponseString.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\leagues\client\dto\SummonerLeagueItemsDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\leagues\client\dto\SummonerLeaguesDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\login\AuthenticationCredentials.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\login\Session.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\matchmaking\GameQueueConfig.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\matchmaking\MatchingThrottleConfig.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\matchmaking\MatchMakerParams.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\matchmaking\QueueDodger.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\matchmaking\QueueInfo.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\matchmaking\SearchingForMatchNotification.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\messaging\StoreFulfillmentNotification.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\reroll\pojo\EogPointChangeBreakdown.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\reroll\pojo\PointSummary.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\reroll\pojo\RollResult.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\reroll\pojo\SimpleDialogMessage.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\reroll\pojo\StoreAccountBalanceNotification.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\AggregatedStat.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\AggregatedStats.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\AggregatedStatsKey.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\ChampionStatInfo.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\EndOfGameStats.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\FellowPlayerInfo.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\LeaverPenaltyStats.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\PlayerGameStats.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\PlayerLifetimeStats.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\PlayerParticipantStatsSummary.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\PlayerStats.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\PlayerStatSummaries.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\PlayerStatSummary.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\RawStat.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\RawStatDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\RecentGames.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\SummaryAggStat.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\SummaryAggStats.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\team\TeamAggregatedStatsDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\team\TeamPlayerAggregatedStatsDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\statistics\TimeTrackedStat.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\AllPublicSummonerDataDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\AllSummonerData.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\BasePublicSummonerDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\boost\SummonerActiveBoostsDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\icon\SummonerIconInventoryDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\masterybook\MasteryBookDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\masterybook\MasteryBookPageDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\masterybook\TalentEntry.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\PublicSummoner.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\RuneSlot.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\runes\SummonerRune.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\runes\SummonerRuneInventory.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\spellbook\SlotEntry.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\spellbook\SpellBookDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\spellbook\SpellBookPageDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\Summoner.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\SummonerCatalog.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\SummonerDefaultSpells.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\SummonerLevel.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\SummonerLevelAndPoints.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\SummonerTalentsAndPoints.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\Talent.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\TalentGroup.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\summoner\TalentRow.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\systemstate\ClientSystemStatesNotification.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\trade\api\contract\PotentialTradersDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\platform\trade\api\contract\TradeContractDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\CreatedTeam.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\dto\PlayerDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\dto\RosterDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\dto\TeamDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\dto\TeamMemberInfoDTO.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\stats\MatchHistorySummary.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\stats\TeamStatDetail.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\stats\TeamStatSummary.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\TeamId.cs" />
+    <Compile Include="RiotClasses\com\riotgames\team\TeamInfo.cs" />
+    <Compile Include="SWF\SWFCompression.cs" />
+    <Compile Include="SWF\SWFReader.cs" />
+    <Compile Include="SWF\SWFTypes\DoABC.cs" />
+    <Compile Include="SWF\SWFTypes\End.cs" />
+    <Compile Include="SWF\SWFTypes\RecordHeader.cs" />
+    <Compile Include="SWF\SWFTypes\Rect.cs" />
+    <Compile Include="SWF\SWFTypes\Tag.cs" />
+    <Compile Include="SWF\SWFTypes\TagCodes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
